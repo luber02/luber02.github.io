@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        a{
+            color: aliceblue;
+            text-decoration: none;
+        } 
+        body{
+            background: url(images/preview.jpg) no-repeat center center fixed;
+			background-size: cover
+        }
+        .container {
+            position: relative;
+            background: url(images/preview.jpg) no-repeat center center fixed;
+			background-size: cover;
+            height: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .textbox {
+            height: 400px;
+            width: 600px;
+            background-color: rgba(5, 4, 4, 0.5);
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            color: aliceblue;
+            margin: 40px;
+        }
+        .header{
+            font-size: 20px;
+            padding-left: 100px;
+            padding-right: 800px;
+            line-height: 80px;
+            width: 100%;
+            height: 80px;
+            background-color: rgba(5, 4, 4, 0.5);
+        }
+        ul{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .text{
+            color: aliceblue;
+        }
+        .first{
+            background-color: rgba(5, 4, 4, 0.7);
+            position: absolute;
+            top: 310px;
+            left: 610px;
+            width: 300px;
+            height: 40px;
+            color: #fff;
+            border: 0;
+            border-radius: 5px;
+        }
+        .sec{
+            background-color: rgba(5, 4, 4, 0.7);
+            position: absolute;
+            top: 400px;
+            left: 610px;
+            width: 300px;
+            height: 40px;
+            color: #fff;
+            border: 1px solid rgba(5, 4, 4, 0.5);
+            border-radius: 5px;
+        }
+        .yonghu{
+            position: absolute;
+            top: 320px;
+            left: 520px;
+        }
+        .psw{
+            position: absolute;
+            top: 410px;
+            left: 530px;
+        }
+        button{
+            position: absolute;
+            top: 500px;
+            left: 660px;
+            width: 120px;
+            height: 50px;
+            background-color: rgba(5, 4, 4, 0.5);
+            border: 0ch;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <li class="text"><a href="实践报告.html">首页</a></li>
+            <li class="text"><a href="主体.html">要点</a></li>
+            <li class="text"><a href="注册.html">注册</a></li>
+            <li class="text"><a href="登录.html">登录</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="textbox">
+          <h1>登录</h1>
+          <input type="text" class="first">
+          <p class="yonghu">用户名：</p>
+          <input type="password" class="sec">
+          <p class="psw">密码：</p>
+          <button>登录</button>
+        </div>
+      </div>
+</body>
+</html>

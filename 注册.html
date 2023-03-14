@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+        }
+        .tab{
+            position: relative;
+            line-height: 100px;
+            padding-left: 200px;
+            width: auto;
+            height: 100px;
+            box-shadow: 1px 1px 3px 1px #ccc;
+        }
+        .logo{
+            width: 60px;
+            position: absolute;
+            top: 20px;
+            left: 60px;
+        }
+        h2{
+            font-weight: normal;
+            display: inline-block;
+        }
+        p{
+            right: 150px;
+            bottom: -28px;
+            position: absolute;
+            display: inline-block;
+            color: #9f9f9f;
+        }
+        a{
+            position: absolute;
+            right: 100px;
+            bottom: -28px;
+            text-decoration: none;
+            color: rgb(6, 148, 242);
+        }
+        .main{
+            padding: 80px;
+            padding-left: 520px;
+        }
+        input{
+            position: relative;
+            font-size:18px;
+            width: 400px;
+            height: 60px;
+            margin-bottom: 40px;
+            border: 1px solid;
+            color: #9f9f9f;
+        }
+        button{
+            width: 400px;
+            height: 60px;
+            margin-bottom: 40px;
+            font-size: 20px;
+            font-weight: normal;
+            color: #fff;
+            background-color: #005eff88;
+            border: 1px solid;
+            cursor: pointer;
+        }
+        .message{
+            position: absolute;
+            display: inline-block;
+            top: 400px;
+            right: 340px;
+        }
+        .wrong{
+            color: red;
+        }
+        .right{
+            color: green;
+        }
+        .im{
+            position: absolute;
+            top: 403px;
+            right: 310px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <img src="images/logo.png" alt="" class="logo">
+        <h2>欢迎注册</h2>
+        <p class="one">已有帐号？</p>
+        <a href="登录.html">请登录</a>
+    </div>
+    <div class="main">
+        <ul>
+            <form action="https://bilibili.com" method="get">
+            <li>
+                <input type="text" value="请输入用户名" class="first">
+            </li>
+            <li>
+                <input type="text" value="请输入手机号" class="sec">
+            </li>
+            <li>
+                <input type="password" class="psw">
+                <img src="images/mess.png" alt="" class="im">
+                <p class="message">请输入6~16位密码</p>
+            </li>
+            <li>
+                <input type="password">
+            </li>
+            <li>
+                <button>注册</button>
+            </li>
+        </form>
+        </ul>
+    </div>
+    <script>
+        var first = document.querySelector('.first');
+        first.onfocus = function(){
+            if (first.value ==='请输入用户名' ){
+                first.value = ' ';
+            }
+            this.style.color = '#333';
+        }
+        first.onblur = function(){
+            if(first.value === ' '){
+                first.value = '请输入用户名';
+            }
+            this.style.color = '#9f9f9f'
+        }
+        var sec = document.querySelector('.sec');
+        sec.onfocus = function(){
+            if (sec.value ==='请输入手机号' ){
+                sec.value = ' ';
+            }
+            this.style.color = '#333';
+        }
+        sec.onblur = function(){
+            if(sec.value === ' '){
+                sec.value = '请输入手机号';
+            }
+            this.style.color = '#9f9f9f'
+        }
+        var psw = document.querySelector('.psw');
+        var message = document.querySelector('.message');
+        var im = document.querySelector('.im');
+        psw.onblur = function(){
+            if(this.value.length<6||this.value.length>16){
+                    message.className = 'message wrong'
+                    im.src = 'images/wrong.png'
+                }
+                else{
+                    message.className = 'message right'
+                    im.src = 'images/right.png'
+                }
+        }
+    </script>
+</body>
+</html>
