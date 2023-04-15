@@ -16,6 +16,7 @@
     a{
       color: #ffffff;
       text-decoration: none;
+      font-size: 20px;
     }
 
     body {
@@ -77,33 +78,39 @@
     }
 
     .section-item__text .text-title {
-      font-size: 24px;
+      font-size: 32px;
       font-weight: bolder;
       margin-bottom: 20px;
     }
+    .section-item__text .text-title a{
+      font-size: 32px;
+    }
 
     .section-item:nth-child(1n) .section-item__block {
-      background-image: url('./images/11.jpg');
+      background-image: url('./images/图片素材/9.jpg');
     }
 
     .section-item:nth-child(2n) .section-item__block {
-      background-image: url('./images/12.jpg');
+      background-image: url('./images/图片素材/12.jpg');
     }
 
     .section-item:nth-child(3n) .section-item__block {
-      background-image: url('./images/13.jpg');
+      background-image: url('./images/图片素材/13.jpg');
     }
 
     .section-item:nth-child(4n) .section-item__block {
-      background-image: url('./images/14.jpg');
+      background-image: url('./images/图片素材/14.jpg');
     }
 
     .section-item:nth-child(5n) .section-item__block {
-      background-image: url('./images/15.jpg');
+      background-image: url('./images/图片素材/15.jpg');
     }
 
     .section-item:nth-child(6n) .section-item__block {
-      background-image: url('./images/16.jpg');
+      background-image: url('./images/图片素材/20.jpg');
+    }
+    .section-item:nth-child(7n) .section-item__block {
+      background-image: url('./images/图片素材/8.jpg');
     }
   </style>
 </head>
@@ -112,46 +119,49 @@
   <section class="section-item">
     <div class="section-item__block" data-index="1"></div>
     <div class="section-item__text">
-      <div class="text-title"><a href="主体.html" target="_blank">「四月是你的谎言」</a></div>
-      <div class="text-desc"><a href="">我在盛开的樱花下遇见你，从此命运不再属于自己。</a></div>
+      <div class="text-title"><a href="main.html" target="_blank">「课题讲解」</a></div>
+      <div class="text-desc"><a href="">蒋昀松</a></div>
     </div>
   </section>
   <section class="section-item">
     <div class="section-item__block" data-index="2"></div>
     <div class="section-item__text">
-      <div class="text-title"><a href="">「言叶之庭」</a></div>
-      <div class="text-desc"><a href="">每晚临睡前 每天睁开眼的瞬间 不知不觉 我都在祈盼雨天 祈盼雨天 祈盼和那个人 再次相会</a></div>
+      <div class="text-title"><a href="">「网页制作」</a></div>
+      <div class="text-desc"><a href="">卢勇博</a></div>
     </div>
   </section>
   <section class="section-item">
     <div class="section-item__block" data-index="3"></div>
     <div class="section-item__text">
-      <div class="text-title"><a href="">「你的名字」</a></div>
-      <div class="text-desc"><a href="">黄昏，不是白昼亦不是夜晚，是我努力却看不清你的脸。</a></div>
+      <div class="text-title"><a href="">「资料查找」</a></div>
+      <div class="text-desc"><a href="">孙志豪 付柏源 陈韬旭 鲁昊 陈旻泽</a></div>
     </div>
   </section>
   <section class="section-item">
     <div class="section-item__block" data-index="4"></div>
     <div class="section-item__text">
-      <div class="text-title"><a href="">「天气之子」</a></div>
-      <div class="text-desc"><a href="">天气真的是很不可思议，光只是天空的模样就让人感动不已。</a></div>
+      <div class="text-title"><a href="">「实践报告」</a></div>
+      <div class="text-desc"><a href="">卢海晗</a></div>
     </div>
   </section>
   <section class="section-item">
     <div class="section-item__block" data-index="5"></div>
     <div class="section-item__text">
-      <div class="text-title"><a href="">「K-ON！」</a></div>
-      <div class="text-desc"><a href="">重要的，珍惜的，一直在身边，一旦成为理所当然，就难以发现</a></div>
+      <div class="text-title"><a href="1.html" target="_blank">「新时代教育公平存在的问题及建议」</a></div>
     </div>
   </section>
   <section class="section-item">
     <div class="section-item__block" data-index="6"></div>
     <div class="section-item__text">
-      <div class="text-title"><a href="">「CLANNAD」</a></div>
-      <div class="text-desc"><a href="">我也很没用，但是两个人一起的话，就会变得很坚强。</a></div>
+      <div class="text-title"><a href="">「教育公平的重要意义」</a></div>
     </div>
   </section>
-
+  <section class="section-item">
+    <div class="section-item__block" data-index="7"></div>
+    <div class="section-item__text">
+      <div class="text-title"><a href="">「实现教育公平的方法」</a></div>
+    </div>
+  </section>
   <script>
     const wh = window.innerHeight
     const sectionBlock = Array.from(document.querySelectorAll('.section-item__block'))
@@ -159,7 +169,7 @@
       sectionBlock.forEach(el => {
         const { bottom, top, height } = el.getBoundingClientRect()
         if (bottom <= 0 || top >= wh) return
-        const y = document.documentElement.scrollTop * 0.28
+        const y = document.documentElement.scrollTop * 0.4
         el.style.backgroundPosition = `center -${y}px`
       })
     })
