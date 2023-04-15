@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    a{
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .section-item {
+      width: 100vw;
+      height: 45vh;
+      position: relative;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .section-item__block {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 120%;
+      background-repeat: no-repeat;
+      background-position: center 0;
+      transform: translate3d(0, 0, 0);
+      will-change: background-position;
+    }
+
+    .section-item__block::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.35);
+      transition: background-color 0.3s ease;
+    }
+
+    .section-item:hover .section-item__block::before {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .section-item__text {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-family: 'Long Cang', cursive;
+      color: #F1F1F1;
+    }
+
+    .section-item__text .text-title {
+      font-size: 32px;
+      font-weight: bolder;
+      margin-bottom: 20px;
+    }
+    .section-item__text .text-title a{
+      font-size: 32px;
+    }
+
+    .section-item:nth-child(1n) .section-item__block {
+      background-image: url('./images/图片素材/9.jpg');
+    }
+
+    .section-item:nth-child(2n) .section-item__block {
+      background-image: url('./images/图片素材/12.jpg');
+    }
+
+    .section-item:nth-child(3n) .section-item__block {
+      background-image: url('./images/图片素材/13.jpg');
+    }
+
+    .section-item:nth-child(4n) .section-item__block {
+      background-image: url('./images/图片素材/14.jpg');
+    }
+
+    .section-item:nth-child(5n) .section-item__block {
+      background-image: url('./images/图片素材/15.jpg');
+    }
+
+    .section-item:nth-child(6n) .section-item__block {
+      background-image: url('./images/图片素材/20.jpg');
+    }
+    .section-item:nth-child(7n) .section-item__block {
+      background-image: url('./images/图片素材/8.jpg');
+    }
+  </style>
+</head>
+
+<body>
+  <section class="section-item">
+    <div class="section-item__block" data-index="1"></div>
+    <div class="section-item__text">
+      <div class="text-title"><a href="main.html" target="_blank">「课题讲解」</a></div>
+      <div class="text-desc"><a href="">蒋昀松</a></div>
+    </div>
+  </section>
+  <section class="section-item">
+    <div class="section-item__block" data-index="2"></div>
+    <div class="section-item__text">
+      <div class="text-title"><a href="">「网页制作」</a></div>
+      <div class="text-desc"><a href="">卢勇博</a></div>
+    </div>
+  </section>
+  <section class="section-item">
+    <div class="section-item__block" data-index="3"></div>
+    <div class="section-item__text">
+      <div class="text-title"><a href="">「资料查找」</a></div>
+      <div class="text-desc"><a href="">孙志豪 付柏源 陈韬旭 鲁昊 陈旻泽</a></div>
+    </div>
+  </section>
+  <section class="section-item">
+    <div class="section-item__block" data-index="4"></div>
+    <div class="section-item__text">
+      <div class="text-title"><a href="">「实践报告」</a></div>
+      <div class="text-desc"><a href="">卢海晗</a></div>
+    </div>
+  </section>
+  <section class="section-item">
+    <div class="section-item__block" data-index="5"></div>
+    <div class="section-item__text">
+      <div class="text-title"><a href="1.html" target="_blank">「新时代教育公平存在的问题及建议」</a></div>
+    </div>
+  </section>
+  <section class="section-item">
+    <div class="section-item__block" data-index="6"></div>
+    <div class="section-item__text">
+      <div class="text-title"><a href="">「教育公平的重要意义」</a></div>
+    </div>
+  </section>
+  <section class="section-item">
+    <div class="section-item__block" data-index="7"></div>
+    <div class="section-item__text">
+      <div class="text-title"><a href="">「实现教育公平的方法」</a></div>
+    </div>
+  </section>
+  <script>
+    const wh = window.innerHeight
+    const sectionBlock = Array.from(document.querySelectorAll('.section-item__block'))
+    window.addEventListener('scroll', function () {
+      sectionBlock.forEach(el => {
+        const { bottom, top, height } = el.getBoundingClientRect()
+        if (bottom <= 0 || top >= wh) return
+        const y = document.documentElement.scrollTop * 0.4
+        el.style.backgroundPosition = `center -${y}px`
+      })
+    })
+  </script>
+</body>
+
+</html>
